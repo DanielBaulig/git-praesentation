@@ -8,7 +8,10 @@ all: pdf
 
 pdf: $(DIST)
 
-%.pdf: $(DEPS) %.tex
+%.pdf: $(DEPS) %.tex %.aux
+	$(LATEX) $*.tex -o $*.pdf
+
+%.aux: $(DEPS) %.tex
 	$(LATEX) $*.tex -o $*.pdf
 
 clean:
