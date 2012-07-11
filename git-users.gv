@@ -1,0 +1,15 @@
+graph G {
+    graph [truecolor bgcolor="#F0EFE7"]
+    android [image="logos/android.png" shape="plaintext" label=""]
+    eclipse [image="logos/eclipse.png" shape="plaintext" label=""]
+    facebook[image="logos/facebook.png" shape="plaintext" label=""]
+    gnome   [image="logos/gnome.png" shape="plaintext" label=""]
+    google  [image="logos/google.png" shape="plaintext" label=""]
+    kde     [image="logos/kde.png" shape="plaintext" label=""]
+    linkedin[image="logos/linked-in.png" shape="plaintext" label=""]
+    linux   [image="logos/linux.png" shape="plaintext" label=""]
+    microsoft[image="logos/microsoft.png" shape="plaintext" label=""]
+    qt      [image="logos/qt.png" shape="plaintext" label=""]
+    twitter [image="logos/twitter.png" shape="plaintext" label=""]
+    x       [image="logos/x.png" shape="plaintext" label=""]
+}
