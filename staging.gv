@@ -1,0 +1,32 @@
+digraph G {
+    compound=true
+    rankdir=LR
+    node [shape=rect style="filled,rounded,filled"]
+    subgraph cluster_workdir {
+        node [fillcolor="#feaaa0"]
+        label="working directory"
+        fileA
+        fileB
+        fileC
+    }
+
+    subgraph cluster_index {
+        node [fillcolor="#f1ffa7"]
+        label="staging area"
+        A
+        B
+        C
+    }
+
+    subgraph cluster_repo {
+        node [fillcolor="#bee3b8"]
+        label="repository"
+        A_ [label=A]
+        B_ [label=B]
+        C_ [label=C]
+    }
+    fileA -> A [label="git add fileA"] 
+    fileB -> B [label="git add fileB"]
+    fileC -> C [label="git add fileC"]
+    B -> B_ [ltail=cluster_index lhead=cluster_repo label="git commit"]
+}
