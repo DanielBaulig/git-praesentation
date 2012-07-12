@@ -2,7 +2,7 @@ LATEX=pdflatex
 DIST=slides.pdf handout.pdf
 DEPS=presentation.tex header.tex
 
-.PHONY: clean dist-clean
+.PHONY: clean dist-clean all pdf
 
 all: pdf
 
