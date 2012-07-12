@@ -1,0 +1,61 @@
+digraph G {
+    rankdir=LR
+    edge[dir=none]
+    node [style="filled,rounded" shape="rect" fillcolor="#caf6d3" width=1]
+
+    subgraph v1 {
+        rank=same
+        node [fillcolor="#caf6d3"]
+        v1[fillcolor="#feaaa0" label="Version 1"]
+        A
+        B
+        C
+
+        v1 -> A -> B -> C
+    }
+
+    subgraph v2 {
+        rank=same
+        v2[fillcolor="#feaaa0" label="Version 2"]
+        A1
+        B_[label="B" style="filled,rounded,dotted" fillcolor="#ddf6e0"]
+        C1
+
+        v2 -> A1 -> B_ -> C1
+    }
+
+    subgraph v3 {
+        rank=same
+        v3[fillcolor="#feaaa0" label="Version 3"]
+    
+        A1_[label="A1" style="filled,rounded,dotted" fillcolor="#ddf6e0"]
+        B__[label="B" style="filled,rounded,dotted" fillcolor="#ddf6e0"]
+        C2
+        
+        v3 -> A1_ -> B__ -> C2
+    }
+    
+    subgraph v4 {
+        rank=same
+        v4[fillcolor="#feaaa0" label="Version 4"]
+
+        A2
+        B1
+        C2_[label="C2" style="filled,rounded,dotted" fillcolor="#ddf6e0"]
+
+        v4 -> A2 -> B1 -> C2_
+    }
+    
+    subgraph v5 {
+        rank=same
+        v5[fillcolor="#feaaa0" label="Version 5"]
+
+        A2_[label="A2" style="filled,rounded,dotted" fillcolor="#ddf6e0"]
+        B2
+        C3
+
+        v5 -> A2_ -> B2 -> C3
+    }
+
+    v1 -> v2 -> v3 -> v4 -> v5[dir=default]
+}
