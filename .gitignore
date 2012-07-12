@@ -6,8 +6,4 @@
 *.nav
 *.snm
 *.swp
-git-users.png
-centralized-workflow.png
-distributed-workflow.png
-file-delta.png
-blob-snapshots.png
+*.png
