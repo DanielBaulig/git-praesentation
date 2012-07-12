@@ -1,6 +1,7 @@
 LATEX=pdflatex
 DIST=slides.pdf handout.pdf
-DEPS=presentation.tex header.tex git-users.png
+PNGS=git-users.png
+DEPS=presentation.tex header.tex $(PNGS)
 
 .PHONY: clean dist-clean
 
@@ -14,8 +15,11 @@ pdf: $(DIST)
 git-users.png: git-users.gv logos/*.png
 	neato -Tpng -o $@ $<
 
+%.png: %.gv
+	dot -Tpng -o $@ $<
+
 clean:
-	rm -f *.log *.nav *.toc *.aux *.snm *.out git-users.png
+	rm -f *.log *.nav *.toc *.aux *.snm *.out $(PNGS)
 
 dist-clean: clean
 	rm -f $(DIST)
