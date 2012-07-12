@@ -1,0 +1,28 @@
+strict digraph G {
+    node [style="rounded,filled" shape=rect]
+    subgraph cluster_public {
+        penwidth=0
+        node [style="rounded,filled" fillcolor="#c5f7d2" label="developer public"]
+        pub1
+        pub2
+    }
+    subgraph cluster_private {
+        penwidth=0
+        node [style="rounded,filled" fillcolor="#77ba8e" label="developer local"]
+        dev1
+        dev2
+    }
+    maintainer[label="maintainer" fillcolor="#feaaa0"]
+    blessed[label="blessed repository" fillcolor="#7db5f2"]
+
+    blessed -> dev1
+    blessed -> dev2
+
+    dev1 -> pub1
+    dev2 -> pub2
+
+    pub1 -> maintainer
+    pub2 -> maintainer
+
+    maintainer -> blessed
+}

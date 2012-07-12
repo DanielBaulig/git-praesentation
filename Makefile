@@ -1,6 +1,6 @@
 LATEX=pdflatex
 DIST=slides.pdf handout.pdf
-PNGS=git-users.png
+PNGS=git-users.png centralized-workflow.png distributed-workflow.png
 DEPS=presentation.tex header.tex $(PNGS)
 
 .PHONY: clean dist-clean

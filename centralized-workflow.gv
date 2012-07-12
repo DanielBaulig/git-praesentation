@@ -1,0 +1,16 @@
+strict digraph G {
+    concentrate=true
+    node[style="filled,rounded" shape="rect"]
+
+    repository[label="central repository" fillcolor="#77ba8e"]
+    dev1[label="developer" fillcolor="#c5f7d2"]
+    dev2[label="developer" fillcolor="#c5f7d2"]
+    dev3[label="developer" fillcolor="#c5f7d2"]
+
+    repository -> dev1
+    dev1 -> repository
+    repository -> dev2
+    dev2 -> repository
+    repository -> dev3
+    dev3 -> repository
+}
