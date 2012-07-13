@@ -8,3 +8,14 @@
 
 \usetheme{Frankfurt}
 
+\AtBeginSection[]{
+    \begin{frame}<beamer>{Fortschritt}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+
+\AtBeginSubsection[]{
+    \begin{frame}<beamer>{Fortschritt}
+        \tableofcontents[currentsection,currentsubsection]
+    \end{frame}
+}
