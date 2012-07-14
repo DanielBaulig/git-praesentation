@@ -1,3 +1,6 @@
+\newcommand{\command}[1]{\texttt{#1}}
+\newcommand{\variable}[1]{\textit{#1}}
+
 \begin{document}
 
 \frame{
@@ -111,6 +114,88 @@
 \end{frame}
 
 \section{Git Praktisch}
+\subsection{}
+
+\begin{frame}{Setup}
+    \begin{block}<1->{Identität festlegen}
+\command{git config --global user.name "\variable{your name}"}\newline
+\command{git config --global user.email "\variable{your@mail.com}"}
+    \end{block}
+    \vspace{2em}
+    \begin{block}<2->{Lokales Repository anlegen}
+        \command{git init}
+    \end{block}
+    \uncover<3->{\centerline{\textbf{ODER}}}
+    \begin{block}<3->{Remote Repository klonen}
+            \command{git clone \variable{remote-url}}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Änderungen hinzufügen}
+    \begin{block}<1->{Änderungen vornehmen}
+        \command{echo "Hello, World!"{} > \variable{file}}
+    \end{block}
+    \begin{block}<2->{Änderung stagen}
+        \command{git add \variable{file}}
+    \end{block}
+    \begin{block}<3->{Gestagete Änderungen commiten}
+        \command{git commit}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Branchen \& Mergen}
+    \begin{block}<1->{Branch anlegen}
+        \command{git branch \variable{topic}}\newline
+        \command{git checkout \variable{topic}}
+    \end{block}
+    \begin{block}<2->{Änderung vornehmen}
+        \command{echo "Hello, World!"{} >{}> \variable{file}}\newline
+        \command{git commit -am "{}Add another line"}
+    \end{block}
+    \begin{block}<3->{Zurück mergen}
+        \command{git checkout master}\newline
+        \command{git merge \variable{topic}}\newline
+        \command{git branch -d \variable{topic}}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Änderungen pushen\uncover<3->{ und fetchen}}
+    \begin{block}{Commits pushen}
+        \command{git push [\variable{remote-url}|\variable{remote-alias}] [\variable{branch}]}
+    \end{block}
+    \begin{alertblock}<2->{Kein Fast-Forward Merge?}
+        \command{Failed to push some refs to <\variable{repo}>. To prevent you from losing history, non-fast-forward updates were rejected. Merge remote changes before pushing again.}
+    \end{alertblock}
+    
+    \temporal<3>{\vspace{5em}}{\begin{block}{Remote Commits fetchen und mergen}
+        \command{git fetch [\variable{remote-url}|\variable{remote-alias}]}\newline
+        \command{git merge \{\variable{remote-alias}|\variable{remote-url}\}/\variable{branch}}
+    \end{block}}{\begin{block}{Remote Commits pullen}
+        \vspace{.6em}
+        \command{git pull \{\variable{remote-alias}|\variable{remote-url}\} [\variable{branch}]}
+        \vspace{.6em}
+    \end{block}}
+    
+    \begin{block}<5->{Commits (erneut) pushen}
+        \command{git push [\variable{remote-url}|\variable{remote-alias}] [\variable{branch}]}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Git kann (viel) mehr!}
+    \begin{columns}
+        \begin{column}{.8\textwidth}
+        \begin{itemize}[<+->]
+            \item[git status] Informationen zum Working-Directory
+            \item[git log] Zeigt die Commit-History
+            \item[git diff] Vergleicht zwei Objekte
+            \item[git rebase] Replay-Merge + History Rewriting
+            \item[git stash] Working-Directory Stack
+            \item[git reset] Working-Directory und Index Manipulation
+            \item[git help] Sehr gute Online-Hilfe
+        \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
 
 \section{Schluss}
 \subsection{}
